@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "version": "1.0",
+    "name":"youtube recommendation-eradicator",
+    "description":"Helps you keep focus by turning off youtube recommendations.",
+    "icons":{
+        "128":"mekky16.png",
+        "48":"mekky48.png",
+        "16":"mekky128.png"
+    },
+    "page_action":{
+        "default_icon":"mekky16.png",
+        "default_popup":"popup.html",
+        "default_title":"Youtube recommendation-eradicator"
+    },
+    
+    "content_scripts":[
+        {
+            "matches":["https://www.youtube.com/*"],
+            "js":["jquery-3.3.1.min.js","content.js"],
+            "css":["content.css"],
+            "all_frames":true
+        }
+    ],
+    "permissions":[
+        "tabs",
+        "https://www.youtube.com/*"
+    ]
+}
